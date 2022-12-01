@@ -2,7 +2,7 @@
 
 <hr id=answer><br>
 
-<div class="gridContainer">
+<div id="gridContainer">
 
     <div class="legendItem">Sentence:</div>
     <div id="backContent" class="contentDiv"></div>
@@ -57,6 +57,24 @@
             }
         }
 
+        function hideBilingualDefinition() {
+            let definitionMonolingual = document.getElementById("definitionMonolingual").innerHTML;
+            let definitionBilingual = document.getElementById("definitionBilingual");
+            let legendItems = document.getElementsByClassName("legendItem");
+            let gridContainer = document.getElementById("gridContainer");
+            if (definitionMonolingual.length > 0) {
+                definitionBilingual.style.visibility = "hidden";
+                let legendButton = document.createElement("button");
+                legendItems[2].innerHTML = "";
+                legendButton.innerHTML = "Def. Bil.:";
+                legendItems[2].appendChild(legendButton);
+                legendButton.addEventListener('click', _ => {
+                    definitionBilingual.style.visibility = "visible";
+                });
+            }
+        }
+
         backSelection();
         emptyUnusedLegendItem();
+        hideBilingualDefinition();
     </script>
