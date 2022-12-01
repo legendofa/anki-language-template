@@ -1,0 +1,17 @@
+<span id="sentence" style="display: none">{{Sentence}}{{Sentence Audio}}</span>
+<span id="word" style="display: none">{{Word}}{{Word Audio}}</span>
+
+<script>
+	function frontSelection() {
+		let sentence = document.getElementById("sentence").innerHTML;
+		let word = document.getElementById("word").innerHTML;
+		if (word.length <= 0) {
+			document.getElementById("sentence").style.display = "block";
+		}
+		else {
+			document.getElementById("word").style.display = "block";
+		}
+	}
+
+	frontSelection();
+</script>

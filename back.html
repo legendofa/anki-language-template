@@ -1,0 +1,62 @@
+{{FrontSide}}
+
+<hr id=answer><br>
+
+<div class="gridContainer">
+
+    <div class="legendItem">Sentence:</div>
+    <div id="backContent" class="contentDiv"></div>
+
+    <div class="legendItem">Def. Mon.:</div>
+    <div id="definitionMonolingual" class="contentDiv">{{Definition Monolingual}}</div>
+
+    <div class="legendItem">Def. Bil.:</div>
+    <div id="definitionBilingual">{{Definition Bilingual}} <span class="wordOrigin">{{Word Origin}}</span></br></br></div>
+
+    <div class="legendItem">Sentence Transl.:</div>
+    <div id="sentenceTranslation" class="contentDiv">{{Sentence Translation}}</div>
+
+</div>
+
+
+<div class="contentDiv" style="text-align: center">
+    <div style="width: 60%; margin: 0 auto;">
+        {{Image}}
+    </div>
+</div>
+
+<div style="text-align: left; font-family: Batang;">
+    {{#Notes}}<span class=title>Notes:<br></span>{{/Notes}}<span class=notes>{{Notes}}</span></div>
+
+    <script>
+        function backSelection() {
+            let sentence = document.getElementById("sentence").innerHTML;
+            let word = document.getElementById("word").innerHTML;
+            if (word.length > 0) {
+                document.getElementById("backContent").innerHTML = sentence;
+            }
+        }
+
+        function emptyUnusedLegendItem() {
+            let legendItems = document.getElementsByClassName("legendItem");
+            let backContent = document.getElementById("backContent").innerHTML;
+            let definitionMonolingual = document.getElementById("definitionMonolingual").innerHTML;
+            let definitionBilingual = document.getElementById("definitionBilingual").innerHTML;
+            let sentenceTranslation = document.getElementById("sentenceTranslation").innerHTML;
+            if (backContent.length <= 0) {
+                legendItems[0].innerHTML = "";
+            }
+            if (definitionMonolingual.length <= 0) {
+                legendItems[1].innerHTML = "";
+            }
+            if (definitionBilingual.length <= 0) {
+                legendItems[2].innerHTML = "";
+            }
+            if (sentenceTranslation.length <= 0) {
+                legendItems[3].innerHTML = "";
+            }
+        }
+
+        backSelection();
+        emptyUnusedLegendItem();
+    </script>

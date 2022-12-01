@@ -1,0 +1,60 @@
+.card {
+    font-family: arial;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    background-color: white;
+}
+
+.contentDiv {
+    margin-bottom: 1em;
+}
+
+.contentDiv:empty {
+    margin-bottom: 0;
+}
+
+.title {
+    font-size:80%;
+    color: #999999;
+}
+
+.notes {
+    font-family: Batang; color: #449933;
+    font-size: 80%;
+}
+
+.wordOrigin {
+    font-family: Batang;
+    color:rgb(173,122,190);
+    font-size:26px;
+}
+
+#backContent {
+    grid-column: 2;
+}
+
+#definitionMonolingual {
+    color:rgb(150,222,255);
+    grid-column: 2;
+}
+
+#definitionBilingual {
+    grid-column: 2;
+}
+
+#sentenceTranslation {
+    color:rgb(255,222,190);
+    grid-column: 2;
+}
+
+.legendItem {
+    grid-column: 1;
+    font-family: Batang; color: #999999;
+    font-size: 80%;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
